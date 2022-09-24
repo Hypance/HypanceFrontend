@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+  height: 100vh;
+
+}
+.hyp {
+  margin-inline-start: 100px;
+}
+
+.cb {
+  justify-content: left;
+  align-items: left;
+  display: flex;
+  box-sizing: border-box;
+  margin-inline-start: -100px;
+  font-size: 15px;
+
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;  
+
+}
