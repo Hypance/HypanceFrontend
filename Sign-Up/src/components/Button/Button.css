@@ -1,0 +1,16 @@
+.button {
+    height: 30px;
+    color:white;
+    background-color: cornflowerblue;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+    border-style: none;
+    
+    
+}
+
+.button:hover{
+    background-color: rgb(74, 74, 74);
+}

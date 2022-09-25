@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f0f8ff;
+}
+
+.Sign-Up {
+  color: black;
+  background-color: #f0f8ff;
+  padding: 10px;
+
+}
+
+
+
+.navbar{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  color: black;
+  background-color: white;
+  margin: 0px auto;
+  letter-spacing: 1px;
+
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin-right: 80%;
+  font-size: 30px;
+  
+  
+}
+
+
+.govde{
+  height: 50vh;
+  width: 100%;
+  background-color: gray;
+  color: black;
+}
+
+.link{
+  color: red;
+  display: inline-block;
+  width: 30%x;
+}
