@@ -34,10 +34,21 @@ function App() {
     setUser({ ...user, RememberMe: e.target.value });
     console.log(user);
   }
-  
+  let d = 0;
+  const check = (i) => {
+    if(users[i].email.includes(user.email) && users[i].password.includes(user.password) ){
+      alert("Welcome");
+      d=1;
+    }
+      else{
+        if(i===users.length-1){
+          if(d===0){
+            alert("Email or password is incorrect");  
+        
+    }
+  }}}
 
-  const LogIn = () => {
-    let d=1;  
+  const LogIn = () => {  
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     
     if (user.email === '') {
@@ -49,35 +60,11 @@ function App() {
     else if (!regEx.test(user.email)) {
     alert("Invalid email");
   }
-    else {
-      for(let i=0;i<5;i++){
-        if (user.email!==users[i].email || user.password !== users[i].password) {
-          console.log("Email or password is incorrect")
-          }
-        else if(user.email===users[i].email && user.password === users[i].password) {
-          alert("Welcome")
-          i=4;
-          }
-  
+    else{
+      for(let i=0;i<users.length;i++){
+        check(i);
       }
-  }
-    
-    
-      // while (i < users.length ){
-      //   if (users[i].email === user.email){ 
-      //     alert("Bu E posta Kullanılıyor")
-      //     d = 0;
-      //   }
-      //   i++
-      // }
-      // if (flag === 1)  {
-        
-      // }
-    // }
-}
-
-
-
+    }}
 
 return (
   <div className="App">
