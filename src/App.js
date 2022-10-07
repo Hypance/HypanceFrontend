@@ -6,7 +6,7 @@ import {BrowserRouter, Routes, Route } from "react-router-dom";
 //Components 
 import Home from "./Components/Home/Home";
 import NameBar from "./Components/NameBar/NameBar";
-import NavBar from "./Components/NavBar/NavBar";
+import TopBar from "./Components/TopBar/TopBar";
 import SummaryBox from "./Components/SummaryBox/SummaryBox";
 import CreateStrategyArea from "./Components/CreateStrategyArea/CreateStrategyArea";
 import CreateBotArea from "./Components/CreateBotArea/CreateBotArea";
@@ -19,7 +19,7 @@ function App() {
     <Routes>
       <Route index element={<Home />} />
       <Route path='namebar' element={<NameBar />} />
-      <Route path='navbar' element={<NavBar />} />
+      <Route path='topBar' element={<TopBar />} />
       <Route path='summarybox' elemnet={<SummaryBox />} />
       <Route path='createstrategyarea' element={<CreateStrategyArea />} />
       <Route path='createbotarea' element={<CreateBotArea />} />
