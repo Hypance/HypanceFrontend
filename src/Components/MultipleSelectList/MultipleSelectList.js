@@ -1,6 +1,7 @@
 import React from 'react'
+import './MultipleSelectList.css'
 
-export default function MultipleSelect() {
+export default function MultipleSelectList() {
   return (
 
     
