@@ -1,3 +1,8 @@
+.topBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .Cryptos {
     font-family: 'Inter';
     font-weight: 500;
@@ -29,8 +34,6 @@
 .SearchBar {
     height: 44px;
     box-sizing: border-box;
-    top: 32px;
-    position: absolute;
     display: flex;
     border: 1px solid rgba(35, 35, 35, 0.16);
     border-radius: 8px;
@@ -68,11 +71,6 @@
     vertical-align: middle;
 }
 
-.spaceVertical {
-    position: absolute;
-    top: 44px;
-}
-
 .spaceVertical2 {
     margin-left: 20px;
 }
@@ -84,6 +82,10 @@
     position: absolute;
     width: 109px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 
 }
 
