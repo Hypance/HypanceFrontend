@@ -1,6 +1,4 @@
-import React,{useState, useEffect} from "react";
-import InputArea from "../InputArea/InputArea";
-import SelectList from "../SelectList/SelectList";
+import React,{useState} from "react";
 import SummaryBox from "../SummaryBox/SummaryBox";
 import * as BS from "react-bootstrap";
 

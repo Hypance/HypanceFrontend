@@ -1,9 +1,9 @@
 import React from "react";
 import "./TopBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, NavDropdown, Form, Row, Col } from "react-bootstrap";
+import {NavDropdown, Form} from "react-bootstrap";
 import dollar from "./dollar.png";
-import btc from "./btc.png";
+// import btc from "./btc.png";
 import avatar from "./avatar.jpg";
 import zil from "./zil.png";
 function TopBar() {
