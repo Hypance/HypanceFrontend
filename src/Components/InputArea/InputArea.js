@@ -5,7 +5,6 @@ export default function StrategyName() {
     <div>
     <form>
       <label>
-      <h4 className='strategy_description'>Strategy Description</h4>
       <input type="text" id="fname" name="firstname" placeholder='Descrription' className='strategy_description_input'/>
       </label>
     </form>
