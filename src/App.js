@@ -12,6 +12,8 @@ import CreateStrategyArea from "./Components/CreateStrategyArea/CreateStrategyAr
 import CreateBotArea from "./Components/CreateBotArea/CreateBotArea";
 import SideBar from "./Components/SideBar/SideBar";
 import SelectList from "./Components/SelectList/SelectList";
+import Strategy from "./Components/Strategy/Strategy";
+
 
 
 
@@ -28,7 +30,7 @@ function App() {
       <Route path='createbotarea' element={<CreateBotArea />} />
       <Route path='sidebar' element={<SideBar />} />
       <Route path='selectList' element={<SelectList />} />
-
+      <Route path="strategy" element={<Strategy />} />
     </Routes>
     </BrowserRouter>
     </div>
