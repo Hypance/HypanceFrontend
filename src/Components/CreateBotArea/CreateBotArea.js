@@ -1,120 +1,136 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container,Row,Col} from 'react-bootstrap';
+import React,{useState} from "react";
+import SummaryBox from "../SummaryBox/SummaryBox";
+import * as BS from "react-bootstrap";
+import "./CreateBotArea.css"
 
-import './CreateBotArea.css'
-// import Example from './Options';
-// import Strategy from './Strategy';
-// import Formation from './Formation';
-// import Assets from './Assets';
-
-
-
-import React from 'react'
 
 function CreateBotArea() {
-  return (
-    
+  const [form, setForm] = useState({
+    botName: '',
+    botDescription: '',
+    predefinedMarket: '',
+    priceStrategy: '',
+    tradeType: '',
+    assets: '',
+    strategy: '',
+    formation: '',
+    trendStrategy: '',
+    priceVolume: '',
+  });
 
-    <div >
-        
-        <br />
-        <br />
-
-        <Container>
-            <Row>
-                <Col x="3"></Col>
-                <Col>
-                    
-                    <br />
-                    <label htmlFor="">Bot Name</label> <br />
-                    <input className='input' placeholder='Give a name to your bot' type="text" />
-                    
-                     <br />
-                    <label htmlFor="">Predefined Market</label>
-                     <br />
-
-                    <select className='dropbox' name="cars" id="cars">
-                        <option value="volvo">Select a market</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select> 
-
-                    <br />
-                    <label htmlFor="">Trade Type</label>
-                     <br />
-
-                    <select className='dropbox' name="cars" id="cars">
-                        <option value="volvo">Select a trade type</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
-
-                     <br />
-                    <label htmlFor="">Strategy</label> 
-                    <br />
-                    {/* <Example></Example> */}
-                    {/* <Strategy></Strategy> */}
-                    
-  
-                    <label htmlFor="">Trend Strategy</label> <br />
-                    <select className='dropbox' name="cars" id="cars" multiple>
-                        <option value="volvo">Select a trend strategy</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
-                    <button className='button'>Create a Bot</button>
-                    
-                    
-
-
-                </Col>
-                <Col>
-                    <h1></h1>  
-                    <br />
-                    <label htmlFor="">Bot Description</label> <br />
-                    <input className='input' placeholder='Bot Description....' type="text" /> <br />
-
-                    <label htmlFor="">Price Strategy</label> <br />
-                    <select className='dropbox' name="cars" id="cars">
-                        <option value="volvo">Select a price strategy</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>                    
-
-                    <label htmlFor="">Assets</label> <br />
-                    {/* <Assets></Assets> <br /> */}
-
-                    <label htmlFor="">Formation</label> <br />
-                    {/* <Formation></Formation> <br /> */}
-                    {/* <label htmlFor="">Price Volume</label> <br />
-                    <input placeholder='...' type="text" /> <br /> */}
-                    <label htmlFor="">Price Volume</label> <br />
-                    <div className='PriceVolumeArea'>
-                        <button className='PriceVolumeButton'>25%</button>
-                        <button className='PriceVolumeButton'>50%</button>
-                        <button className='PriceVolumeButton'>75%</button>
-                        <button className='PriceVolumeButton'>100%</button>
-                    </div>
-                    
-
-
-                 
-                    {/* <a className="btn btn-primary" href="#" role="button">Link</a>
-                    <button className="btn btn-primary" type="submit">Button</button> */}
-                    
-                </Col>
-
-                <Col>  <h1></h1>    </Col>
-            </Row>
-        </Container>
-    </div>
-   
-      
-  )
+const postCreateBot = (e)=>{
+  e.preventDefault();
+  console.log(form);
 }
 
-export default CreateBotArea
+  return (
+    <div>
+      <BS.Row className='row'>
+      <BS.Col sm="9" md="10">
+          <h1>Create Your Bot</h1>
+          <BS.Row>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Bot Name</BS.Form.Label>
+                <BS.Form.Control className="input" type="text" value={form.botName} placeholder="Give a name to your bot" onChange={e => { setForm({ ...form, botName: e.target.value }); }} />
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Bot Description</BS.Form.Label>
+                <BS.Form.Control className="input" type="text" value={form.botDescription} placeholder="..." onChange={e => { setForm({ ...form, botDescription: e.target.value }); }}/>
+              </BS.Form.Group>
+            </BS.Col>
+          </BS.Row>          
+          <BS.Row>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label >Predefined Market</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example">
+                  <option value="RSI">RSI</option>
+                  <option value="MACD">MACD</option>
+                  <option value="EMA">EMA</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Price Strategy</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example">
+                  <option value="RSI">RSI</option>
+                  <option value="MACD">MACD</option>
+                  <option value="EMA">EMA</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Trade Type</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example">
+                  <option value="RSI">RSI</option>
+                  <option value="MACD">MACD</option>
+                  <option value="EMA">EMA</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label >Assets</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example" multiple>
+                  <option value="0">1</option>
+
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Strategy</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example" multiple>
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label >Trend Strategy</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example" >
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Formation</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example" multiple>
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Price Volume</BS.Form.Label>
+                <BS.Form.Select className="input" aria-label="Default select example">
+                  <option value="0">25%</option>
+                  <option value="1">50%</option>
+                  <option value="2">75%</option>
+                  <option value="3">100%</option>
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+          </BS.Row>
+          <BS.Button className="button" onClick={postCreateBot}>Create a Bot</BS.Button>
+        </BS.Col>
+        <BS.Col sm="3" md="2">
+          <SummaryBox />
+        </BS.Col>
+      </BS.Row>
+    </div>
+  );
+}
+
+export default CreateBotArea;
