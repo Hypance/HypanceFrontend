@@ -1,8 +1,9 @@
-.topBar{
+.topBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .Cryptos {
     font-family: 'Inter';
     font-weight: 500;
@@ -11,16 +12,11 @@
     letter-spacing: -0.04em;
     color: rgba(117, 117, 117, 1);
     font-style: normal;
-    flex: 2 1 0;
-    order: 0;
-    flex-grow: 0;
     text-align: center;
-    width: 100%;
-    position: relative;
+
 }
 
 .CryptosData {
-    position: relative;
     text-align: center;
     font-family: 'Inter';
     font-weight: 500;
@@ -28,7 +24,6 @@
     line-height: 19.2px;
     letter-spacing: -0.04em;
     color: rgba(15, 75, 167, 1);
-    width: 100%;
 }
 
 .SearchBar {
@@ -47,12 +42,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
-    /* identical to box height, or 16px */
-
     letter-spacing: -0.04em;
-
     color: #757575;
-
 }
 
 .space {
@@ -71,53 +62,42 @@
     vertical-align: middle;
 }
 
-.spaceVertical2 {
-    margin-left: 20px;
-}
-
 .box {
     border: 1px solid rgba(35, 35, 35, 0.16);
     border-radius: 8px;
     box-sizing: border-box;
-    position: absolute;
     width: 109px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
-
 }
 
 .bell {
-
-    position: absolute;
     display: flex;
     align-items: center;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    top: 10px;
-    left: 10px;
-
+    width: 18px;
+    height: 18px;
+    justify-content: space-between;
+    margin: 13px;
 
 }
 
 .ntfc {
-
     box-sizing: border-box;
-
-    position: absolute;
     width: 44px;
     height: 44px;
-
     border: 1px solid rgba(35, 35, 35, 0.16);
     border-radius: 8px;
 }
+.Avatar{
+    margin-right: 48px;
+}
 
-.Currency{
+.Currency {
     vertical-align: middle;
-    align-items:flex-start;
+    align-items: flex-start;
     display: flex;
     position: absolute;
 }
