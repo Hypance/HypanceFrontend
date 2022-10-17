@@ -36,8 +36,8 @@ function SideBar() {
           </li>{" "}
           <br />
           <li>
-            <BS.NavLink className="dashboard" href="bot">
-              <span className="icon">&#128435;</span>Bot
+            <BS.NavLink className="dashboard" href="createbotarea">
+              <span className="icon">&#128435;</span>Create Bot
             </BS.NavLink>
           </li>{" "}
           <br />
