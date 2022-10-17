@@ -15,19 +15,18 @@ import * as BS from "react-bootstrap";
 
 function App() {
   return (
-    <div>
+    <div className="container-fluid">
       <BS.Row>
         <BS.Col md="3">
           <SideBar></SideBar>
         </BS.Col>
         <BS.Col md="9">
-          <BS.Row>
+          <BS.Row className="p-3">
             <TopBar></TopBar>
           </BS.Row>
-          <BS.Row>
+          <BS.Row className="p-3">
             <BrowserRouter>
               <Routes>
-                ß
                 <Route index element={<Home />} />
                 <Route path="namebar" element={<NameBar />} />
                 <Route path="topBar" element={<TopBar />} />
