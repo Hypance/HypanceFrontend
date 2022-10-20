@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SummaryBox from "../SummaryBox/SummaryBox";
 import * as BS from "react-bootstrap";
 import axios from "axios";
+import { baseURL } from "../../Constants/constant";
 
 function CreateStrategyArea() {
   const [signals, setSignals] = useState({
@@ -17,8 +18,34 @@ function CreateStrategyArea() {
     description: "",
     signals: [signals],
   });
+  let DefaultPeriod = [9, 10, 11];
+  const getIndicator = (e) => {
+    setSignals({ ...signals, period: DefaultPeriod[0] });
+  }
+  const [nameList, setNames] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      var config = {
+        method: "get",
+        url: "https://jsonplaceholder.typicode.com/posts",
+      };
+      axios(config)
+        .then(function (response) {
+          setNames(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }    // Trigger the fetch
+    fetchData();
+  }, []);
+
+  const GetSettings = (e) => {
+
+  }
 
   const postCreateStrategy = (e) => {
+    console.log(signals);
     e.preventDefault();
     var config = {
       method: "post",
@@ -27,7 +54,7 @@ function CreateStrategyArea() {
         "Content-Type": "application/json",
         accept: "*/*"
       },
-      data: JSON.stringify({form}),
+      data: JSON.stringify({ form }),
     };
 
     axios(config)
@@ -77,15 +104,24 @@ function CreateStrategyArea() {
           <BS.Row>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Signal Name</BS.Form.Label>
-                <BS.Form.Control
+                <BS.Form.Label>Test</BS.Form.Label>
+                <BS.Form.Select
                   type="text"
                   value={signals.name}
-                  placeholder="Enter Signal Name"
+                  placeholder="Enter Order Signal"
+                  
                   onChange={(e) => {
                     setSignals({ ...signals, name: e.target.value });
                   }}
-                />
+                  
+                >{nameList.map((test) => {
+                  return (
+                    <option key={test.id} value={test.id}>
+                      {test.title}
+                    </option>
+                  );
+                })}
+                  </BS.Form.Select>
               </BS.Form.Group>
             </BS.Col>
             <BS.Col md="6">
@@ -97,6 +133,7 @@ function CreateStrategyArea() {
                   placeholder="Enter Period"
                   onChange={(e) => {
                     setSignals({ ...signals, period: e.target.value });
+                    console.log(e.target.value);
                   }}
                 />
               </BS.Form.Group>
@@ -108,6 +145,7 @@ function CreateStrategyArea() {
                   aria-label="Default select example"
                   onChange={(e) => {
                     setSignals({ ...signals, indicatorId: e.target.value });
+                    getIndicator();
                   }}
                 >
                   <option value="RSI">RSI</option>
@@ -123,6 +161,7 @@ function CreateStrategyArea() {
                   aria-label="Default select example"
                   onChange={(e) => {
                     setSignals({ ...signals, signalResult: e.target.value });
+                    GetSettings();
                   }}
                 >
                   <option value="1">Above</option>
@@ -150,7 +189,7 @@ function CreateStrategyArea() {
             </BS.Col>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Strategy Trend</BS.Form.Label>
+                <BS.Form.Label>Order Signal</BS.Form.Label>
                 <BS.Form.Select
                   aria-label="Default select example"
                   onChange={(e) => {
