@@ -121,7 +121,7 @@
     /* Dashboard */
     
     text-decoration: none;
-    width: 89px;
+    width: 100px;
     height: 22px;
 
     font-family: 'Inter';
@@ -156,7 +156,7 @@ ul{
 }
 .icon{
     color: #757575;
-    padding-right: 8px;
+    padding-right: 5px;
     font-size: 20px;
 }
 
