@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as BS from "react-bootstrap";
-import brokenicon from "../../images/Vector.png"
-import "./SideBar.css"
+import brokenicon from "../../images/Vector.png";
+import "./SideBar.css";
 
 function SideBar() {
   const [isActive, setIsActive] = useState(false)
