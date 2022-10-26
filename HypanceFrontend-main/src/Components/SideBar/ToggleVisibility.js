@@ -3,10 +3,10 @@ import "./ToggleVisibility.css"
 
 export default function ToggleVisibility({ children }) {
 
-  // React state to manage visibility
+
   const [show, setShow] = useState("show");
 
-  // function to toggle the boolean value
+
   function toggleShow() {
     setShow(!show);
   }

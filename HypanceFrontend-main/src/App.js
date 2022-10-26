@@ -20,7 +20,7 @@ function App() {
       <BS.Row>
         <BS.Col md="3">
           <ToggleVisibility>
-            <SideBar></SideBar>
+            <SideBar/>
           </ToggleVisibility>
         </BS.Col>
         <BS.Col md="9">
