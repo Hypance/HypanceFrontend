@@ -14,7 +14,7 @@ export default function ToggleVisibility({ children }) {
   return (
     <div className="component-container">
       {show && children}
-      <button onClick={toggleShow}>{buttonText}</button>
+      <button className="closebutton" onClick={toggleShow}>{buttonText}</button>
     </div>
   );
 }
