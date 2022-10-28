@@ -6,7 +6,6 @@ export default function ToggleVisibility({ children }) {
 
   const [show, setShow] = useState("show");
 
-
   function toggleShow() {
     setShow(!show);
   }
