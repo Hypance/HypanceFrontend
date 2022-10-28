@@ -1,3 +1,16 @@
+.bar {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 269px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+
+    background: #F9FBFC;
+    text-decoration: none;
+}
+
 .overview {
     margin-top: 40px;
     position: absolute;
@@ -20,7 +33,7 @@
 }
 
 .hypance {
-    margin-left: 50px;
+    margin-left: 60px;
     position: absolute;
     
     width: 97px;
@@ -32,7 +45,7 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 120%;
-    /* identical to box height, or 29px */
+    
 
     letter-spacing: -0.04em;
 
@@ -45,9 +58,6 @@
     order: 1;
     flex-grow: 0;
 
-}
-.bar{
-    text-decoration: none;
 }
 
 .brokenicon {
@@ -111,13 +121,13 @@
     /* Dashboard */
     
     text-decoration: none;
-    width: 89px;
+    width: 100px;
     height: 22px;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     /* identical to box height, or 22px */
 
@@ -132,11 +142,6 @@
     order: 1;
     flex-grow: 0;
 }
-.icon{
-    color: #757575;
-    padding-right: 8px;
-    font-size: 20px;
-}
 .active{
     background-color: #0F4BA7;
     padding: 4px;
@@ -146,3 +151,13 @@
     color: #FFFFFF;
     
 }
+ul{
+    list-style-type: none;
+}
+.icon{
+    color: #757575;
+    padding-right: 5px;
+    font-size: 20px;
+}
+
+

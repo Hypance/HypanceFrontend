@@ -12,13 +12,16 @@ import CreateBotArea from "./Components/CreateBotArea/CreateBotArea";
 import SideBar from "./Components/SideBar/SideBar";
 import Strategy from "./Components/Strategy/Strategy";
 import * as BS from "react-bootstrap";
+import ToggleVisibility from "./Components/SideBar/ToggleVisibility";
 
 function App() {
   return (
     <div className="container-fluid">
       <BS.Row>
         <BS.Col md="3">
-          <SideBar></SideBar>
+          <ToggleVisibility>
+            <SideBar></SideBar>
+          </ToggleVisibility>
         </BS.Col>
         <BS.Col md="9">
           <BS.Row className="p-3">
