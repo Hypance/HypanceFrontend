@@ -33,7 +33,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="namebar" element={<NameBar />} />
                 <Route path="topBar" element={<TopBar />} />
-                <Route path="summarybox" elemnet={<SummaryBox />} />
+                <Route path="summarybox" element={<SummaryBox />} />
                 <Route path="createstrategyarea" element={<CreateStrategyArea />} />
                 <Route path="createbotarea" element={<CreateBotArea />} />
                 <Route path="sidebar" element={<SideBar />} />

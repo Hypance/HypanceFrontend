@@ -4,6 +4,7 @@ import * as BS from "react-bootstrap";
 import axios from "axios";
 import { baseURL } from "../../Constants/constant";
 
+
 function CreateStrategyArea() {
   const [signals, setSignals] = useState({
     name: "",
@@ -18,16 +19,15 @@ function CreateStrategyArea() {
     description: "",
     signals: [signals],
   });
-  let DefaultPeriod = [9, 10, 11];
   const getIndicator = (e) => {
-    setSignals({ ...signals, period: DefaultPeriod[0] });
+    setSignals({ ...signals, period: test.period });
   }
   const [nameList, setNames] = useState([]);
   useEffect(() => {
     async function fetchData() {
       var config = {
         method: "get",
-        url: "https://jsonplaceholder.typicode.com/posts",
+        url:"https://jsonplaceholder.typicode.com/posts",
       };
       axios(config)
         .then(function (response) {
@@ -104,24 +104,37 @@ function CreateStrategyArea() {
           <BS.Row>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Test</BS.Form.Label>
+              <BS.Form.Label>Indicator</BS.Form.Label>
+                <BS.Form.Select
+                  aria-label="Default select example"
+                  onChange={(e) => {
+                    setSignals({ ...signals, indicatorId: e.target.value });
+                    getIndicator();
+                  }}
+                >
+                  <option value="RSI">RSI</option>
+                  <option value="MACD">MACD</option>
+                  <option value="EMA">EMA</option>
+                </BS.Form.Select>
+                {/* <BS.Form.Label>Test</BS.Form.Label>
                 <BS.Form.Select
                   type="text"
                   value={signals.name}
                   placeholder="Enter Order Signal"
-                  
+
                   onChange={(e) => {
                     setSignals({ ...signals, name: e.target.value });
                   }}
-                  
+
                 >{nameList.map((test) => {
                   return (
                     <option key={test.id} value={test.id}>
-                      {test.title}
+                      {test.id}-{test.name}
+                      
                     </option>
                   );
                 })}
-                  </BS.Form.Select>
+                </BS.Form.Select> */}
               </BS.Form.Group>
             </BS.Col>
             <BS.Col md="6">
@@ -140,23 +153,7 @@ function CreateStrategyArea() {
             </BS.Col>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Indicator</BS.Form.Label>
-                <BS.Form.Select
-                  aria-label="Default select example"
-                  onChange={(e) => {
-                    setSignals({ ...signals, indicatorId: e.target.value });
-                    getIndicator();
-                  }}
-                >
-                  <option value="RSI">RSI</option>
-                  <option value="MACD">MACD</option>
-                  <option value="EMA">EMA</option>
-                </BS.Form.Select>
-              </BS.Form.Group>
-            </BS.Col>
-            <BS.Col md="6">
-              <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Setting</BS.Form.Label>
+              <BS.Form.Label>Setting</BS.Form.Label>
                 <BS.Form.Select
                   aria-label="Default select example"
                   onChange={(e) => {
@@ -170,6 +167,19 @@ function CreateStrategyArea() {
                   <option value="4">Crosses Under</option>
                   <option value="5">Equal</option>
                 </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
+              <BS.Form.Label>Value</BS.Form.Label>
+                <BS.Form.Control
+                  type="number"
+                  value={form.name}
+                  placeholder="Text"
+                  onChange={(e) => {
+                    setForm({ ...form, name: e.target.value });
+                  }}
+                />
               </BS.Form.Group>
             </BS.Col>
             <BS.Col md="6">
