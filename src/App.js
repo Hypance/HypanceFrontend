@@ -39,7 +39,7 @@ function App() {
                 <Route path="createbotarea" element={<CreateBotArea />} />
                 <Route path="sidebar" element={<SideBar />} />
                 <Route path="strategy" element={<Strategy />} />
-                <Route path="setting" element={<Settings />} />
+                <Route path="settings" element={<Settings />} />
               </Routes>
             </BrowserRouter>
           </BS.Row>
