@@ -10,6 +10,7 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import anonim from "./anonim.jpg";
+import * as BS from "react-bootstrap";
 
 export function Settings() {
    const [fillActive, setFillActive] = useState("tab1");
@@ -53,43 +54,127 @@ export function Settings() {
 
        <MDBTabsContent>
          <MDBTabsPane show={fillActive === "tab1"}>
-           <h5>GENERAL INFORMATION</h5>
-           <div className="d-flex ">
-             <img
-               alt=""
-               className="rounded-circle"
-               src={anonim}
-               width="100"
-               height="100"
-             />
+           <BS.Container>
+             <BS.Row>
+               <BS.Col>
+                 <h5>GENERAL INFORMATION</h5>
+                 <div className="d-flex ">
+                   <img
+                     alt=""
+                     className="rounded-circle"
+                     src={anonim}
+                     width="100"
+                     height="100"
+                   />
 
-             <MDBFile className="" id="customFile" />
-           </div>
-           <div>
-             <form>
-               <MDBInput id="form4Example1" wrapperClass="mb-4" label="Name" />
-               <MDBInput
-                 type="email"
-                 id="form4Example2"
-                 wrapperClass="mb-4"
-                 label="Email address"
-               />
-               <MDBInput
-                 wrapperClass="mb-4"
-                 textarea
-                 id="form6Example7"
-                 rows={4}
-                 label="Additional information"
-               />
+                   <MDBFile className="" id="customFile" />
+                 </div>
+                 <div>
+                   <form>
+                     <MDBInput
+                       id="form4Example1"
+                       wrapperClass="mb-4"
+                       label="Name"
+                     />
+                     <MDBInput
+                       type="email"
+                       id="form4Example2"
+                       wrapperClass="mb-4"
+                       label="Email address"
+                     />
+                     <MDBInput
+                       wrapperClass="mb-4"
+                       textarea
+                       id="form6Example7"
+                       rows={4}
+                       label="Additional information"
+                     />
 
-               <MDBBtn type="submit" className="mb-4" block>
-                 Sign in
-               </MDBBtn>
-             </form>
-           </div>
+                     <BS.Button variant="primary" size="lg">
+                       Block level button
+                     </BS.Button>
+                   </form>
+                 </div>
+               </BS.Col>
+               <BS.Col></BS.Col>
+             </BS.Row>
+           </BS.Container>
          </MDBTabsPane>
-         <MDBTabsPane show={fillActive === "tab2"}>Tab 2 content</MDBTabsPane>
-         <MDBTabsPane show={fillActive === "tab3"}>Tab 3 content</MDBTabsPane>
+         <MDBTabsPane show={fillActive === "tab2"}>
+           <BS.Container>
+             <BS.Row>
+               <BS.Col>
+                 <h5>GENERAL INFORMATION</h5>
+                 <div className="d-flex ">
+                   <img
+                     alt=""
+                     className="rounded-circle"
+                     src={anonim}
+                     width="100"
+                     height="100"
+                   />
+
+                   <MDBFile className="" id="customFile" />
+                 </div>
+                 <div>
+                   <form>
+                     <MDBInput
+                       id="form4Example1"
+                       wrapperClass="mb-4"
+                       label="Name"
+                     />
+                     <MDBInput
+                       type="email"
+                       id="form4Example2"
+                       wrapperClass="mb-4"
+                       label="Email address"
+                     />
+                     <MDBInput
+                       wrapperClass="mb-4"
+                       textarea
+                       id="form6Example7"
+                       rows={4}
+                       label="Additional information"
+                     />
+
+                     <MDBBtn type="submit" className="mb-4" block>
+                       Sign in
+                     </MDBBtn>
+                   </form>
+                 </div>
+               </BS.Col>
+               <BS.Col></BS.Col>
+             </BS.Row>
+           </BS.Container>
+         </MDBTabsPane>
+         <MDBTabsPane show={fillActive === "tab3"}>
+           <BS.Container>
+             <BS.Row>
+               <BS.Col>
+                 <h5>PASSWORD</h5>
+                 <p>Change your password to a new one.</p>
+               </BS.Col>
+               <BS.Col>
+                 {" "}
+                 <BS.Button variant="outline-primary" size="lg">
+                   Primary
+                 </BS.Button>{" "}
+               </BS.Col>
+             </BS.Row>
+             <BS.Row>
+               <BS.Col>
+                 <h5>MULTI-FACTOR AUTHENTICATION</h5>
+                 <p>Setup or remove MFA devices.</p>
+               </BS.Col>
+               <BS.Col>
+                 {" "}
+                 <BS.Button variant="outline-primary" size="lg">
+                   Primary
+                 </BS.Button>{" "}
+               </BS.Col>
+             </BS.Row>
+           </BS.Container>
+         </MDBTabsPane>
        </MDBTabsContent>
      </>
    );
