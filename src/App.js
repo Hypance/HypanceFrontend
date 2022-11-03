@@ -13,24 +13,25 @@ import SideBar from "./Components/SideBar/SideBar";
 import Strategy from "./Components/Strategy/Strategy";
 import * as BS from "react-bootstrap";
 import ToggleVisibility from "./Components/SideBar/ToggleVisibility";
+import SignIn from "./Components/LogIn/SignIn/SignIn";
 
 function App() {
   return (
     <div className="container-fluid">
       <BS.Row>
-        <BS.Col md="3">
+        <BS.Col md="2">
           <ToggleVisibility>
             <SideBar></SideBar>
           </ToggleVisibility>
         </BS.Col>
-        <BS.Col md="9">
+        <BS.Col md="10">
           <BS.Row className="p-3">
             <TopBar></TopBar>
           </BS.Row>
           <BS.Row className="p-3">
             <BrowserRouter>
               <Routes>
-                <Route index element={<Home />} />
+                <Route index element={<SignIn />} />
                 <Route path="namebar" element={<NameBar />} />
                 <Route path="topBar" element={<TopBar />} />
                 <Route path="summarybox" element={<SummaryBox />} />
