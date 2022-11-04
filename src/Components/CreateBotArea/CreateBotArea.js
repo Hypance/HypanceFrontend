@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SummaryBox from "../SummaryBox/SummaryBox";
+import CBASummaryBox from "../SummaryBox/CreateBotAreaSummaryBox/CBASummaryBox";
 import * as BS from "react-bootstrap";
 import "./CreateBotArea.css";
 import Bot from "../../Models/bot.model";
@@ -128,8 +128,11 @@ function CreateBotArea() {
                   className="input"
                   multiple
                   onChange={(e) => {
-                    const selected = e.target.querySelectorAll('option:checked');
-                    const values = Array.from(selected).map(el => Number(el.value));
+                    const selected =
+                      e.target.querySelectorAll("option:checked");
+                    const values = Array.from(selected).map((el) =>
+                      Number(el.value)
+                    );
                     bot.assetIds = values;
                   }}
                 >
@@ -150,8 +153,11 @@ function CreateBotArea() {
                   className="input"
                   multiple
                   onChange={(e) => {
-                    const selected = e.target.querySelectorAll('option:checked');
-                    const values = Array.from(selected).map(el => Number(el.value));
+                    const selected =
+                      e.target.querySelectorAll("option:checked");
+                    const values = Array.from(selected).map((el) =>
+                      Number(el.value)
+                    );
                     bot.strategyIds = values;
                   }}
                 >
@@ -176,7 +182,10 @@ function CreateBotArea() {
                 >
                   {positionTypeList.map((positionType) => {
                     return (
-                      <option key={positionType.value} value={positionType.value}>
+                      <option
+                        key={positionType.value}
+                        value={positionType.value}
+                      >
                         {positionType.text}
                       </option>
                     );
@@ -227,7 +236,7 @@ function CreateBotArea() {
           </BS.Button>
         </BS.Col>
         <BS.Col sm="3" md="2">
-          <SummaryBox />
+          <CBASummaryBox />
         </BS.Col>
       </BS.Row>
     </div>
