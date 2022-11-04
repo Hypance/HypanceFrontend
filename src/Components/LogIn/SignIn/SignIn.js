@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import * as BS from "react-bootstrap";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import avatar from "../../TopBar/avatar.jpg";
 import "./SignIn.css"
-import CreateBotArea from "../../CreateBotArea/CreateBotArea";;
 function SignIn() {
     const userList =  [
         {
@@ -22,13 +21,15 @@ function SignIn() {
             email: 'strawberry@email.com',password: 'secretstrawberry'
         }
     ]
+    const navig = useNavigate();
+
     const [user, setUser] = useState({ email: '', password: '', rememberMe: false });
     let d = 0;
     const check = (i) => {
         if(userList[i].email.includes(user.email) && userList[i].password.includes(user.password) ){
           alert("Welcome");
           d=1;
-         
+          navig("/strategy");
         }
           else{
             if(i===userList.length-1){
