@@ -7,7 +7,7 @@
     left: 0px;
     top: 0px;
 
-    background: #F9FBFC;
+    background: #fcd293;
     text-decoration: none;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .hypance {
-    margin-left: 60px;
+    margin-left: 63px;
     position: absolute;
     
     width: 97px;
@@ -60,14 +60,17 @@
 
 }
 
-.brokenicon {
+.logo {
+    margin-right: 5px;
+    height: 35px;
+    width: 120px; 
     position: absolute;
-    left: 12.5%;
-    right: 12.5%;
-    top: 5.65%;
+    left: 10%;
+    right: 13%;
+    top: 8%;
     bottom: 9.64%;
+    border: none;
 
-    border: 1.5px solid #0F4BA7;
 }
 
 .other {

@@ -222,8 +222,8 @@ function CreateBotArea() {
               </BS.Form.Group> */}
             </BS.Col>
           </BS.Row>
-          <BS.Button className="button" onClick={postCreateBot}>
-            Create a Bot
+          <BS.Button className="buttonbot" onClick={postCreateBot}>
+            <p className="deneme">Create a Bot</p>
           </BS.Button>
         </BS.Col>
         <BS.Col sm="3" md="2">

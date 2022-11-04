@@ -13,6 +13,7 @@ import SideBar from "./Components/SideBar/SideBar";
 import Strategy from "./Components/Strategy/Strategy";
 import * as BS from "react-bootstrap";
 import ToggleVisibility from "./Components/SideBar/ToggleVisibility";
+import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword"
 
 function App() {
   return (
@@ -30,8 +31,9 @@ function App() {
           <BS.Row className="p-3">
             <BrowserRouter>
               <Routes>
-                <Route index element={<Home />} />
+                <Route index element={<Home/>} />
                 <Route path="namebar" element={<NameBar />} />
+                <Route path="forgotpassword" element={<ForgotPassword />} />
                 <Route path="topBar" element={<TopBar />} />
                 <Route path="summarybox" element={<SummaryBox />} />
                 <Route path="createstrategyarea" element={<CreateStrategyArea />} />
