@@ -8,7 +8,7 @@ import NameBar from "./Components/NameBar/NameBar";
 import TopBar from "./Components/TopBar/TopBar";
 import CBASummaryBox from "./Components/SummaryBox/CreateBotAreaSummaryBox/CBASummaryBox";
 import CSASummaryBox from "./Components/SummaryBox/CreateStrategyAreaSummaryBox/CSASummaryBox";
-
+import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword";
 import CreateStrategyArea from "./Components/CreateStrategyArea/CreateStrategyArea";
 import CreateBotArea from "./Components/CreateBotArea/CreateBotArea";
 import SideBar from "./Components/SideBar/SideBar";
@@ -46,7 +46,6 @@ function App() {
                 <Route path="topBar" element={<TopBar />} />
                 <Route path="cbasummarybox" element={<CBASummaryBox />} />
                 <Route path="csasummarybox" element={<CSASummaryBox />} />
-
                 <Route
                   path="createstrategyarea"
                   element={<CreateStrategyArea />}
