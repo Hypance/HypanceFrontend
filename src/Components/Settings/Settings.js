@@ -88,7 +88,7 @@ export function Settings() {
               <BS.Col>
                 {" "}
                 <BS.Button variant="outline-primary" size="lg">
-                  Primary
+                  Change password
                 </BS.Button>{" "}
               </BS.Col>
             </BS.Row>
@@ -100,7 +100,7 @@ export function Settings() {
               <BS.Col>
                 {" "}
                 <BS.Button variant="outline-primary" size="lg">
-                  Primary
+                  Setup or remove
                 </BS.Button>{" "}
               </BS.Col>
             </BS.Row>
