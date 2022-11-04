@@ -1,10 +1,8 @@
 import * as BS from "react-bootstrap";
 import React from "react";
-import {Routes,Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-
-
-function SummaryBox() {
+function CSASummaryBox() {
   const navigate = useNavigate();
 
   const navigateToCreateStrategies = () => {
@@ -26,11 +24,10 @@ function SummaryBox() {
         </BS.Row>
         <BS.Row>
           <h5 className="mt-5" style={{ fontFamily: "Space Grotesk" }}>
-            Create Strategy Wizard
+            Create Bot Wizard
           </h5>
         </BS.Row>
         <BS.Row>
-          
           <h5
             className="text-gray-900 mt-5 mb-2 "
             style={{ fontFamily: "Space Grotesk" }}
@@ -47,4 +44,4 @@ function SummaryBox() {
   );
 }
 
-export default SummaryBox;
+export default CSASummaryBox;
