@@ -41,7 +41,6 @@ function CreateStrategyArea() {
   }, []);
 
   const GetSettings = (e) => {
-
   }
 
   const postCreateStrategy = (e) => {

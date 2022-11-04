@@ -2,51 +2,46 @@ import React, { useState, useEffect } from "react";
 import SummaryBox from "../SummaryBox/SummaryBox";
 import * as BS from "react-bootstrap";
 import "./CreateBotArea.css";
-import {baseURL} from "../../Constants/constant";
-import axios from "axios";
+import Bot from "../../Models/bot.model";
+import * as urls from "../../Constants/constant";
+import { getData, postData } from "../../Helper/crud";
 
 function CreateBotArea() {
-  const [form, setForm] = useState({
-    botName: "",
-    botDescription: "",
-    predefinedMarket: "",
-    priceStrategy: "",
-    tradeType: "",
-    assets: "",
-    strategy: "",
-    formation: "",
-    trendStrategy: "",
-    priceVolume: "",
-  });
+  const [bot, setBot] = useState(new Bot());
 
   const postCreateBot = (e) => {
     e.preventDefault();
-      axios
-      .post(baseURL(), form)
-      .then((response) => {
-        alert("Success");
-      }).catch((err)=>{
-        alert("Error");
-      });
+    console.log(bot);
+    var result = postData(urls.createBotUrl, bot);
+    console.log(result);
   };
 
   const [assetList, setAssets] = useState([]);
+  const [marketList, setMarkets] = useState([]);
+  const [orderTypeList, setOrderType] = useState([]);
+  const [positionTypeList, setPositionType] = useState([]);
+  const [strategyList, setStrategies] = useState([]);
+  const [trendStrategyList, setTrendStrategies] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      var config = {
-        method: "get",
-        url: baseURL("Symbol/GetAll"),
-      };
-      axios(config)
-        .then(function (response) {
-          setAssets(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
+      const assets = await getData(urls.getSymbolUrl);
+      setAssets(assets);
 
-    // Trigger the fetch
+      const markets = await getData(urls.getMarketUrl);
+      setMarkets(markets);
+
+      const orderTypes = await getData(urls.getOrderTypeUrl);
+      setOrderType(orderTypes);
+
+      const positionTypes = await getData(urls.getPositionTypeUrl);
+      setPositionType(positionTypes);
+
+      const strategies = await getData(urls.getStrategiesUrl);
+      setStrategies(strategies);
+
+      const trendStrategies = await getData(urls.getTrendStrategies);
+      setTrendStrategies(trendStrategies);
+    }
     fetchData();
   }, []);
 
@@ -62,10 +57,10 @@ function CreateBotArea() {
                 <BS.Form.Control
                   className="input"
                   type="text"
-                  value={form.botName}
+                  value={bot.name}
                   placeholder="Give a name to your bot"
                   onChange={(e) => {
-                    setForm({ ...form, botName: e.target.value });
+                    bot.name = e.target.value;
                   }}
                 />
               </BS.Form.Group>
@@ -76,10 +71,10 @@ function CreateBotArea() {
                 <BS.Form.Control
                   className="input"
                   type="text"
-                  value={form.botDescription}
-                  placeholder="..."
+                  value={bot.description}
+                  placeholder="Give a description to your bot"
                   onChange={(e) => {
-                    setForm({ ...form, botDescription: e.target.value });
+                    bot.description = e.target.value;
                   }}
                 />
               </BS.Form.Group>
@@ -89,35 +84,55 @@ function CreateBotArea() {
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
                 <BS.Form.Label>Market</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
-                  <option value="0">SPOT</option>
-                  <option value="1">MARKET</option>
+                <BS.Form.Select
+                  className="input"
+                  onChange={(e) => {
+                    bot.market = Number(e.target.value);
+                  }}
+                >
+                  {marketList.map((market) => {
+                    return (
+                      <option key={market.value} value={market.value}>
+                        {market.text}
+                      </option>
+                    );
+                  })}
                 </BS.Form.Select>
               </BS.Form.Group>
             </BS.Col>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
                 <BS.Form.Label>Order Type</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
-                  <option value="0">MARKET</option>
-                  <option value="1">LIMIT</option>
+                <BS.Form.Select
+                  className="input"
+                  onChange={(e) => {
+                    bot.orderType = Number(e.target.value);
+                  }}
+                >
+                  {orderTypeList.map((ordertype) => {
+                    return (
+                      <option key={ordertype.value} value={ordertype.value}>
+                        {ordertype.text}
+                      </option>
+                    );
+                  })}
                 </BS.Form.Select>
               </BS.Form.Group>
             </BS.Col>
-            <BS.Col md="6">
-              <BS.Form.Group className="mb-3">
-                <BS.Form.Label>Position Type</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
-                  <option value="0">DEFAULT</option>
-                  <option value="1">BUY-LONG</option>
-                  <option value="2">SELL-SHORT</option>
-                </BS.Form.Select>
-              </BS.Form.Group>
-            </BS.Col>
+
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
                 <BS.Form.Label>Assets</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
+                <BS.Form.Select
+                  name="assets"
+                  className="input"
+                  multiple
+                  onChange={(e) => {
+                    const selected = e.target.querySelectorAll('option:checked');
+                    const values = Array.from(selected).map(el => Number(el.value));
+                    bot.assetIds = values;
+                  }}
+                >
                   {assetList.map((asset) => {
                     return (
                       <option key={asset.id} value={asset.id}>
@@ -131,18 +146,60 @@ function CreateBotArea() {
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
                 <BS.Form.Label>Strategy</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
-                  <option value="0">RSI 14</option>
+                <BS.Form.Select
+                  className="input"
+                  multiple
+                  onChange={(e) => {
+                    const selected = e.target.querySelectorAll('option:checked');
+                    const values = Array.from(selected).map(el => Number(el.value));
+                    bot.strategyIds = values;
+                  }}
+                >
+                  {strategyList.map((strategy) => {
+                    return (
+                      <option key={strategy.id} value={strategy.id}>
+                        {strategy.name}
+                      </option>
+                    );
+                  })}
                 </BS.Form.Select>
               </BS.Form.Group>
             </BS.Col>
             <BS.Col md="6">
-            <BS.Form.Group className="mb-3">
+              <BS.Form.Group className="mb-3">
+                <BS.Form.Label>Position Type</BS.Form.Label>
+                <BS.Form.Select
+                  className="input"
+                  onChange={(e) => {
+                    bot.positionType = Number(e.target.value);
+                  }}
+                >
+                  {positionTypeList.map((positionType) => {
+                    return (
+                      <option key={positionType.value} value={positionType.value}>
+                        {positionType.text}
+                      </option>
+                    );
+                  })}
+                </BS.Form.Select>
+              </BS.Form.Group>
+            </BS.Col>
+            <BS.Col md="6">
+              <BS.Form.Group className="mb-3">
                 <BS.Form.Label>Trend Strategy</BS.Form.Label>
-                <BS.Form.Select className="input" aria-label="Default select example">
-                  <option value="0">Up Trend</option>
-                  <option value="1">Down trend</option>
-                  <option value="2">Horizontal</option>
+                <BS.Form.Select
+                  className="input"
+                  onChange={(e) => {
+                    bot.trendStrategy = Number(e.target.value);
+                  }}
+                >
+                  {trendStrategyList.map((trend) => {
+                    return (
+                      <option key={trend.value} value={trend.value}>
+                        {trend.text}
+                      </option>
+                    );
+                  })}
                 </BS.Form.Select>
               </BS.Form.Group>
               {/* <BS.Form.Group className="mb-3">
