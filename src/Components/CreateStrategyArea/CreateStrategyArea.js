@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SummaryBox from "../SummaryBox/SummaryBox";
+import CSASummaryBox from "../SummaryBox/CreateStrategyAreaSummaryBox/CSASummaryBox";
 import * as BS from "react-bootstrap";
 import axios from "axios";
 import { baseURL } from "../../Constants/constant";
@@ -103,7 +103,7 @@ function CreateStrategyArea() {
           <BS.Row>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-              <BS.Form.Label>Indicator</BS.Form.Label>
+                <BS.Form.Label>Indicator</BS.Form.Label>
                 <BS.Form.Select
                   aria-label="Default select example"
                   onChange={(e) => {
@@ -152,7 +152,7 @@ function CreateStrategyArea() {
             </BS.Col>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-              <BS.Form.Label>Setting</BS.Form.Label>
+                <BS.Form.Label>Setting</BS.Form.Label>
                 <BS.Form.Select
                   aria-label="Default select example"
                   onChange={(e) => {
@@ -170,7 +170,7 @@ function CreateStrategyArea() {
             </BS.Col>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
-              <BS.Form.Label>Value</BS.Form.Label>
+                <BS.Form.Label>Value</BS.Form.Label>
                 <BS.Form.Control
                   type="number"
                   value={form.name}
@@ -224,7 +224,7 @@ function CreateStrategyArea() {
           <BS.Button onClick={postCreateStrategy}>Create Strategy</BS.Button>
         </BS.Col>
         <BS.Col sm="3" md="2">
-          <SummaryBox />
+          <CSASummaryBox />
         </BS.Col>
       </BS.Row>
     </div>

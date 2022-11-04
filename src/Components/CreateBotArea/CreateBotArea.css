@@ -1,0 +1,11 @@
+.buttonbot{
+    background-color: #ffbc59;
+    border: #ffbc59;
+    height: 40px;
+}
+.buttonbot:hover{
+    background-color: #ffbc59;
+}
+.deneme{
+    color: #757575;
+}
