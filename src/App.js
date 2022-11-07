@@ -21,51 +21,55 @@ import SignIn from "./Components/LogIn/SignIn/SignIn";
 
 import SignUp from "./Components/LogIn/SignUp/SignUp";
 
+let isLoggedIn = 1;
 
 function App() {
   return (
-
-    
     <div className="container-fluid">
 
-      
-      <BS.Row>
-        <BS.Col md="2">
-          <ToggleVisibility>
-            <SideBar></SideBar>
-          </ToggleVisibility>
-        </BS.Col>
-        <BS.Col md="10">
-          <BS.Row className="p-3">
-            <TopBar></TopBar>
-          </BS.Row>
-          <BS.Row className="p-3">
-            <BrowserRouter>
-              <Routes>
+      {isLoggedIn ? (
 
-                <Route index element={<SignIn />} />
-                <Route path="namebar" element={<NameBar />} />
+        <BS.Row>
+          <BS.Col md="2">
+            <ToggleVisibility>
+              <SideBar></SideBar>
+            </ToggleVisibility>
+          </BS.Col>
+          <BS.Col md="10">
+            <BS.Row className="p-3">
+              <TopBar></TopBar>
+            </BS.Row>
+            <BS.Row className="p-3">
+              <BrowserRouter>
+                <Routes>
 
-                <Route path="forgotpassword" element={<ForgotPassword />} />
-                <Route path="signup" element={<SignUp />} />
+                  <Route index element={<Home />} />
+                  <Route path="namebar" element={<NameBar />} />
+                  <Route path="topBar" element={<TopBar />} />
+                  <Route path="cbasummarybox" element={<CBASummaryBox />} />
+                  <Route path="csasummarybox" element={<CSASummaryBox />} />
 
-
-                <Route path="topBar" element={<TopBar />} />
-                <Route path="cbasummarybox" element={<CBASummaryBox />} />
-                <Route path="csasummarybox" element={<CSASummaryBox />} />
-
-                <Route
-                  path="createstrategyarea"
-                  element={<CreateStrategyArea />}
-                />
-                <Route path="createbotarea" element={<CreateBotArea />} />
-                <Route path="sidebar" element={<SideBar />} />
-                <Route path="strategy" element={<Strategy />} />
-              </Routes>
-            </BrowserRouter>
-          </BS.Row>
-        </BS.Col>
-      </BS.Row>
+                  <Route
+                    path="createstrategyarea"
+                    element={<CreateStrategyArea />}
+                  />
+                  <Route path="createbotarea" element={<CreateBotArea />} />
+                  <Route path="sidebar" element={<SideBar />} />
+                  <Route path="strategy" element={<Strategy />} />
+                </Routes>
+              </BrowserRouter>
+            </BS.Row>
+          </BS.Col>
+        </BS.Row>
+      ) : (<BrowserRouter>
+        <Routes>
+          <Route index element={<SignIn />} />
+          <Route  path="signin" element={<SignIn />} />
+          <Route path="forgotpassword" element={<ForgotPassword />} />
+          <Route path="signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+      )}
     </div>
   );
 }
