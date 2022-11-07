@@ -85,7 +85,7 @@ function SignUp() {
 
         </BS.Col>
         <BS.Col>
-            <p className='float-end'><b>Have an account? <a className='link' href="">Sign In!</a></b> </p>
+            <p className='float-end'><b>Have an account? <a className='link' href="../SignIn">Sign In!</a></b> </p>
 
             <br /><br /><br /><br /><br /><br />
 
@@ -133,7 +133,7 @@ function SignUp() {
                     />
                     <BS.Button className='SignUp-button' onClick={checkNull}>Create Account</BS.Button>
 
-                    <p className='text'><b>If you already a member, you can sign-in <a className='link' href=''>here</a></b></p>
+                    <p className='text'><b>If you already a member, you can sign-in <a className='link' href='../SignIn'>here</a></b></p>
                     <br />
                     <p className='subtitle'>By continuing you indicate that you read and agreed to the Terms of use</p>
             </div>
