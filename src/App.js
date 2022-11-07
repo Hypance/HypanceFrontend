@@ -18,7 +18,7 @@ import ToggleVisibility from "./Components/SideBar/ToggleVisibility";
 import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword"
 
 import SignIn from "./Components/LogIn/SignIn/SignIn";
-import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword"
+
 import SignUp from "./Components/LogIn/SignUp/SignUp";
 
 
