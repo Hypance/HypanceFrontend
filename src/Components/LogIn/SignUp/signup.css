@@ -1,0 +1,32 @@
+.subtitle{
+    color: #7E7E7E;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 15.035px;
+    line-height: 11px;
+    margin-top: 3vh;
+}
+
+.SignUp-button{
+    border-radius: 10px;
+    width:50%;
+    height: 40px;
+    background-color: #0F4BA7;
+    color: white;
+    margin-top: 20px;
+    border: 1px;
+    
+}
+ 
+.Sign-Up{
+    background-color: #f0f8ff ;
+}
+
+.text{
+    margin-top: 3vh;
+}
+
+.link{
+    text-decoration: none;
+}
+

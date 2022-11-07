@@ -19,10 +19,16 @@ import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword"
 
 import SignIn from "./Components/LogIn/SignIn/SignIn";
 
+import SignUp from "./Components/LogIn/SignUp/SignUp";
+
 
 function App() {
   return (
+
+    
     <div className="container-fluid">
+
+      
       <BS.Row>
         <BS.Col md="2">
           <ToggleVisibility>
@@ -38,11 +44,12 @@ function App() {
               <Routes>
 
                 <Route index element={<SignIn />} />
-
-      
-
                 <Route path="namebar" element={<NameBar />} />
-                <Route path="forgotpassword" element={< ForgotPassword/>} />
+
+                <Route path="forgotpassword" element={<ForgotPassword />} />
+                <Route path="signup" element={<SignUp />} />
+
+
                 <Route path="topBar" element={<TopBar />} />
                 <Route path="cbasummarybox" element={<CBASummaryBox />} />
                 <Route path="csasummarybox" element={<CSASummaryBox />} />
