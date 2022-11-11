@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as BS from "react-bootstrap";
-import brokenicon from "../../images/Vector.png"
+import logo from "../../images/hypance-yataycontur.png"
+import "./SideBar.css"
 
 function SideBar() {
   const [isActive, setIsActive] = useState(false)
@@ -8,10 +9,11 @@ function SideBar() {
       setIsActive(!isActive);
   };
   return (
-    <div>
+    <div className="bar">
+      
       <div>
-        <h2 className="hypance">Hypance</h2>
-        <img className="brokenicon" src={brokenicon} alt="brokenicon" />
+        
+        <img className="logo" src={logo} alt="logo" />
         <p className="overview">OVERVIEW</p>
         <p className="other">OTHER</p>
       </div>
@@ -36,8 +38,8 @@ function SideBar() {
           </li>{" "}
           <br />
           <li>
-            <BS.NavLink className="dashboard" href="bot">
-              <span className="icon">&#128435;</span>Bot
+            <BS.NavLink className="dashboard" href="createbotarea">
+              <span className="icon">&#128435;</span>Create Bot
             </BS.NavLink>
           </li>{" "}
           <br />

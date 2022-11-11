@@ -1,0 +1,36 @@
+.SignInNav{
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+.dnm{
+    float: left;
+}
+.form{
+    text-align: center;
+    align-content: center;
+
+}
+.inputs{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3vh;
+    
+}
+.SignIn-button{
+    border-radius: 10px;
+    width:50%;
+    height: 40px;
+    background-color: rgb(88, 88, 230);
+    color: white;
+    margin-top: 20px;
+    border: 1px;
+    margin-left: 25%;
+  }
+  .check{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-top: 3vh;
+    margin-right: 25%;
+  }
