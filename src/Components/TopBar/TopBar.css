@@ -28,6 +28,7 @@
 }
 
 .SearchBar {
+    margin-left: 2vw;
     height: 44px;
     box-sizing: border-box;
     display: flex;
@@ -48,19 +49,7 @@
 }
 
 .space {
-    margin-right: 32px;
-}
-
-.space2 {
-    margin-right: 24px;
-}
-
-.parag {
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    align-self: center;
-    vertical-align: middle;
+    margin-right: 2vw;
 }
 
 .box {
@@ -92,13 +81,4 @@
     border: 1px solid rgba(35, 35, 35, 0.16);
     border-radius: 8px;
 }
-.Avatar{
-    margin-right: 48px;
-}
 
-.Currency {
-    vertical-align: middle;
-    align-items: flex-start;
-    display: flex;
-    position: absolute;
-}
