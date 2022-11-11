@@ -69,7 +69,7 @@ function CreateStrategyArea() {
     <div>
       <BS.Row className="row">
         <BS.Col sm="9" md="10">
-          <h2>CreateStrategyArea</h2>
+          <h2>Create Your Strategy</h2>
           <BS.Row>
             <BS.Col md="6">
               <BS.Form.Group className="mb-3">
@@ -173,10 +173,10 @@ function CreateStrategyArea() {
                 <BS.Form.Label>Value</BS.Form.Label>
                 <BS.Form.Control
                   type="number"
-                  value={form.name}
-                  placeholder="Text"
+                  value={form.value}
+                  placeholder="Value"
                   onChange={(e) => {
-                    setForm({ ...form, name: e.target.value });
+                    setForm({ ...form, value: e.target.value });
                   }}
                 />
               </BS.Form.Group>
@@ -207,6 +207,7 @@ function CreateStrategyArea() {
                 >
                   <option value="BUY">BUY</option>
                   <option value="SELL">SELL</option>
+                  <option value="ONLY_ALERT">ONLY ALERT</option>
                 </BS.Form.Select>
               </BS.Form.Group>
             </BS.Col>
