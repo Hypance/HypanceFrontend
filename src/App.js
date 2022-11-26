@@ -15,7 +15,6 @@ import SideBar from "./Components/SideBar/SideBar";
 import Strategy from "./Components/Strategy/Strategy";
 import * as BS from "react-bootstrap";
 import ToggleVisibility from "./Components/SideBar/ToggleVisibility";
-import ForgotPassword from "./Components/LogIn/ForgotPassword/ForgotPassword"
 import Settings from "./Components/Settings/Settings";
 
 import SignIn from "./Components/LogIn/SignIn/SignIn";
