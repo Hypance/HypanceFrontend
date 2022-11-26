@@ -69,8 +69,26 @@ export function Settings() {
         >
           <BS.Container>
             <BS.Row>
-              <BS.Col></BS.Col>
-              <BS.Col></BS.Col>
+              <BS.Col>
+                {" "}
+                <h5>Your Notifications</h5>
+                <BS.Row>
+                  <BS.Col>
+                    <BS.Form.Select size="lg">
+                      <option>Large select</option>
+                    </BS.Form.Select>
+                  </BS.Col>
+                  <BS.Col>
+                    <BS.Form.Select size="lg">
+                      <option>Large select</option>
+                    </BS.Form.Select>
+                  </BS.Col>
+                </BS.Row>
+              </BS.Col>
+              <BS.Col>
+                {" "}
+                <h5>Your Delivery Methods</h5>
+              </BS.Col>
             </BS.Row>
           </BS.Container>
         </BS.Tab>
@@ -80,7 +98,7 @@ export function Settings() {
           title="Security"
         >
           <BS.Container>
-            <BS.Row className="mt-5">
+            <BS.Row>
               <BS.Col>
                 <h5>PASSWORD</h5>
                 <p>Change your password to a new one.</p>
